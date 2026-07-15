@@ -51,9 +51,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     super.initState();
 
     _tabList.removeLast();
-    if (!Platform.isAndroid) {
-      _tabList.removeAt(1);
-    }
+    //if (!Platform.isAndroid) {
+   //   _tabList.removeAt(1);
+   // }
+   _tabList.removeAt(1); // 移除APP(已安装应用列表)
 
     _tabController = TabController(
       vsync: this,
