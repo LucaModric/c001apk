@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   final _pages = [
     const HomeFeedPage(tabType: TabType.FOLLOW),
-    if (Platform.isAndroid) const AppListPage(),
+    //if (Platform.isAndroid) const AppListPage(),
     const HomeFeedPage(tabType: TabType.FEED),
     const HomeFeedPage(tabType: TabType.HOT),
     const HomeTopicPage(tabType: TabType.TOPIC),
@@ -51,10 +51,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     super.initState();
 
     _tabList.removeLast();
-    //if (!Platform.isAndroid) {
-   //   _tabList.removeAt(1);
-   // }
-   _tabList.removeAt(1); // 移除APP(已安装应用列表)
+    // if (!Platform.isAndroid) {
+      // _tabList.removeAt(1);
+     //}
+  
 
     _tabController = TabController(
       vsync: this,
