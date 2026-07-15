@@ -2,6 +2,9 @@ name: Build
 
 on:
   workflow_dispatch:
+  # 插件会自动在后台隐式读取系统自带的 secrets.GITHUB_TOKEN，发布release不再需要你显式地写出 env: GITHUB_TOKEN 这行代码
+  permissions:
+    contents: write
 
 jobs:
   build-android:
@@ -20,10 +23,10 @@ jobs:
         run: flutter pub get
       - name: Build APK
         run: flutter build apk --release --split-per-abi
-      - name: Upload
-        uses: actions/upload-artifact@v4
+      - name:  Create Release and Upload APK
+        uses:  softprops/action-gh-release@v2
         with:
-          name: Android
-          path: build/app/outputs/flutter-apk/*.apk
+          name: COOL_Android
+          files: build/app/outputs/flutter-apk/*.apk
 
  
