@@ -23,6 +23,7 @@ jobs:
         run: flutter pub get
       - name: Build APK
         run: flutter build apk --release --split-per-abi
+        # Error: ⚠️ GitHub Releases requires a tag 需要tag才能触发
       - name:  Create Release and Upload APK
         uses:  softprops/action-gh-release@v2
         with:

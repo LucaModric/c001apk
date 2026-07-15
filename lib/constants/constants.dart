@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const APP_NAME = 'c001apk-flutter';
+  static const APP_NAME = 'COOL';
 
   static const REQUEST_WITH = 'XMLHttpRequest';
   static const LOCALE = 'zh-CN';
@@ -39,7 +39,7 @@ class Constants {
   static const URL_COOLAPK = 'https://www.coolapk.com/';
   static const URL_LOGIN = 'https://account.coolapk.com/auth/login?type=mobile';
   static const URL_SOURCE_CODE =
-      'https://github.com/RzdPai/c001apk';
+      'https://github.com/LucaModric/c001apk';
   static const URL_API_SERVICE = 'https://api.coolapk.com';
   static const URL_API2_SERVICE = 'https://api2.coolapk.com';
   static const URL_ACCOUNT_SERVICE = 'https://account.coolapk.com';
