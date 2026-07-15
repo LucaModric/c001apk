@@ -3,9 +3,8 @@ name: Build
 on:
   workflow_dispatch:
   # 插件会自动在后台隐式读取系统自带的 secrets.GITHUB_TOKEN，发布release不再需要你显式地写出 env: GITHUB_TOKEN 这行代码
-  # 
-  permissions:
-    contents: write
+permissions:
+  contents: write
 
 jobs:
   build-android:
