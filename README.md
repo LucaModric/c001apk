@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+根据个人喜好做了一点修改：
+- apk重命名为COOL
+- 去掉tab项中的APP (即系统安装应用列表，关闭权限这个tab也会显示，索性去掉)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
