@@ -3,6 +3,7 @@ name: Build
 on:
   workflow_dispatch:
   # 插件会自动在后台隐式读取系统自带的 secrets.GITHUB_TOKEN，发布release不再需要你显式地写出 env: GITHUB_TOKEN 这行代码
+  # 
   permissions:
     contents: write
 
@@ -29,4 +30,10 @@ jobs:
           name: COOL_Android
           files: build/app/outputs/flutter-apk/*.apk
 
- 
+  # 使用 GitHub 官方自带的 gh 命令行工具，无需任何第三方 action,更简单的写法，动态参数可以自定义，比如tag等
+  #    - name: Create Release and Upload APK
+  #      run: |
+  #        gh release create "v1.0.0-${{ github.run_number }}" \
+  #           --title "Release v1.0.0 (Build ${{ github.run_number }})" \
+  #          --notes "自动构建的 APK 产物" \
+  #          build/app/outputs/flutter-apk/*.apk
