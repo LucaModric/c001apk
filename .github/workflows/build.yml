@@ -34,7 +34,11 @@ jobs:
           name: COOL_Android
             # 👇 核心优化：智能判断标签名，兼容手动触发和新建tag触发
           tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('v1.0.{0}', github.run_number) }} 
-          # tag_name是必须配置,github.run_number是系统自增值，这里tag为系统自动生成
+          # tag_name 必须配置,github.run_number是系统自增值，手动触发时tag为系统自动生成
+          body: |
+            和上游只有微小区别
+            > app名字改为COOL；
+            > tab项移除APP。      
           files: build/app/outputs/flutter-apk/*.apk
 
   # 使用 GitHub 官方自带的 gh 命令行工具，无需任何第三方 action,更简单的写法，动态参数可以自定义，比如tag等
